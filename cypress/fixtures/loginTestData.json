@@ -1,0 +1,58 @@
+{
+  "validCredentials": {
+    "username": "Admin",
+    "password": "admin123"
+  },
+  "invalidCredentialsTestCases": [
+    {
+      "description": "Login gagal dengan username yang tidak valid",
+      "username": "invaliduser",
+      "password": "admin123",
+      "expectedError": "Invalid credentials"
+    },
+    {
+      "description": "Login gagal dengan password yang tidak valid",
+      "username": "Admin",
+      "password": "wrongpass",
+      "expectedError": "Invalid credentials"
+    },
+    {
+      "description": "Login gagal dengan username dan password yang tidak valid",
+      "username": "invaliduser",
+      "password": "wrongpassword",
+      "expectedError": "Invalid credentials"
+    },
+    {
+      "description": "Login gagal dengan password case sensitive",
+      "username": "Admin",
+      "password": "Admin123",
+      "expectedError": "Invalid credentials"
+    },
+    {
+      "description": "Login gagal dengan username yang mengandung spasi",
+      "username": " Admin ",
+      "password": "admin123",
+      "expectedError": "Invalid credentials"
+    }
+  ],
+  "emptyFieldTestCases": [
+    {
+      "description": "Menampilkan error required ketika username kosong",
+      "username": "",
+      "password": "admin123",
+      "expectedError": "Required"
+    },
+    {
+      "description": "Menampilkan error required ketika password kosong",
+      "username": "Admin",
+      "password": "",
+      "expectedError": "Required"
+    },
+    {
+      "description": "Menampilkan error required ketika username dan password kosong",
+      "username": "",
+      "password": "",
+      "expectedError": "Required"
+    }
+  ]
+}
